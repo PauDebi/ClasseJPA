@@ -1,7 +1,4 @@
-import entities.Adreca;
-import entities.Empleat;
-import entities.Tasca;
-import entities.Usuari;
+import entities.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -113,21 +110,117 @@ public class Main {
 
 //            System.out.println(a);
 
-            Usuari usuari = manager.find(Usuari.class, 1);
-            Tasca tasca = new Tasca('A', "Fer Llits", 20, usuari);
-            Tasca tasca1 = new Tasca('B', "Fer Menjar", 30, usuari);
-            Tasca tasca2 = new Tasca('C', "Compra pa", 45, usuari);
-            Tasca tasca3 = new Tasca('D', "Dinar", 20, usuari);
-            Tasca tasca4 = new Tasca('E', "Sopar", 20, usuari);
+//            Usuari usuari = manager.find(Usuari.class, 1);
+//            Tasca tasca = new Tasca('A', "Fer Llits", 20, usuari);
+//            Tasca tasca1 = new Tasca('B', "Fer Menjar", 30, usuari);
+//            Tasca tasca2 = new Tasca('C', "Compra pa", 45, usuari);
+//            Tasca tasca3 = new Tasca('D', "Dinar", 20, usuari);
+//            Tasca tasca4 = new Tasca('E', "Sopar", 20, usuari);
+//
+//            manager.persist(tasca);
+//            manager.persist(tasca1);
+//            manager.persist(tasca2);
+//            manager.persist(tasca3);
+//            manager.persist(tasca4);
 
-            manager.persist(tasca);
-            manager.persist(tasca1);
-            manager.persist(tasca2);
-            manager.persist(tasca3);
-            manager.persist(tasca4);
+
+//________________________________________________________________________________
+
+//            Usuari maria = manager.find(Usuari.class, 1);
+//
+//
+//            System.out.println(maria);
+//
+//            System.out.println(maria.getTasques());
+
+//________________________________________________________________________________
+
+            //relaciones M:N
+
+//            Producte producte = new Producte("PAN", "Pa", "comida");
+//            Producte producte1 = new Producte("LET", "Llet", "comida");
+//            Producte producte2 = new Producte("AIG", "Aigua", "comida");
+//            Producte producte3 = new Producte("SAL", "Sal", "comida");
+//            Producte producte4 = new Producte("OUS", "Ous", "comida");
+//
+//            manager.persist(producte);
+//            manager.persist(producte1);
+//            manager.persist(producte2);
+//            manager.persist(producte3);
+//            manager.persist(producte4);
+//
+//
+//
+//            Usuari usuari = manager.find(Usuari.class, 1);
+//
+//            usuari.getProductesComprats().add(producte);
+//
+//            usuari.getProductesComprats().add(producte);
+//            usuari.getProductesComprats().add(producte1);
+//            usuari.getProductesComprats().add(producte2);
+//            usuari.getProductesComprats().add(producte3);
+//            usuari.getProductesComprats().add(producte4);
+
+//________________________________________________________________________________
+
+            //Key Composite
+
+//            Episodi episodi = new Episodi(new EpisodiPK(1, 1), "El primer episodi de la serie", 20);
+//            Episodi episodi1 = new Episodi(new EpisodiPK(1, 2), "El segon episodi de la serie", 21);
+//            Episodi episodi2 = new Episodi(new EpisodiPK(1, 3), "El tercer episodi de la serie", 23);
+//            Episodi episodi3 = new Episodi(new EpisodiPK(1, 4), "El quart episodi de la serie", 22);
+//            Episodi episodi4 = new Episodi(new EpisodiPK(1, 5), "El cinque episodi de la serie", 21);
+//
+//            manager.persist(episodi);
+//            manager.persist(episodi1);
+//            manager.persist(episodi2);
+//            manager.persist(episodi3);
+//            manager.persist(episodi4);
+
+//            Capitol capitol = new Capitol(2, 1, "El primer capitol de la teporada 2", 90);
+//            Capitol capitol1 = new Capitol(2, 2, "El segon capitol de la teporada 2", 45);
+//            Capitol capitol2 = new Capitol(2, 3, "El tercer capitol de la teporada 2", 50);
+//            Capitol capitol3 = new Capitol(2, 4, "El quart capitol de la teporada 2", 49);
+//            Capitol capitol4 = new Capitol(2, 5, "El cinque capitol de la teporada 2", 46);
+//
+//            manager.persist(capitol);
+//            manager.persist(capitol1);
+//            manager.persist(capitol2);
+//            manager.persist(capitol3);
+//            manager.persist(capitol4);
 
 
+//________________________________________________________________________________
 
+            //Exercice
+
+//            Ciutat inca = new Ciutat(1, "Inca");
+//            Ciutat palma = new Ciutat(2, "Palma");
+//
+//            manager.persist(inca);
+//            manager.persist(palma);
+//
+//
+//            Alumne alumne = new Alumne(1, "Pepito", "Correo", inca);
+//            Alumne alumne1 = new Alumne(2, "Paco", "Correo1", palma);
+//
+//            manager.persist(alumne);
+//            manager.persist(alumne1);
+
+//            Modul modul = new Modul("AED", "Programacio", 200);
+//            Modul modul1 = new Modul("M3", "Matematiques", 100);
+//            Modul modul2 = new Modul("FOL", "Formacio i orientacio laboral", 50);
+//
+//            manager.persist(modul);
+//            manager.persist(modul1);
+//            manager.persist(modul2);
+//
+//
+//            Alumne a1 = manager.find(Alumne.class, 1);
+//
+//            a1.getModuls().add(modul);
+//            a1.getModuls().add(modul1);
+//            a1.getModuls().add(modul2);
 
 
             manager.getTransaction().commit();

@@ -14,6 +14,10 @@ public class Usuari {
     private Adreca adreca;
     @OneToMany(mappedBy = "usuari")
     private List<Tasca> tasques;
+    @ManyToMany
+    @JoinTable(name = "compra", joinColumns = @JoinColumn(name="usuari",referencedColumnName = "idUsuari"),
+            inverseJoinColumns = @JoinColumn(name="producte", referencedColumnName = "referencia"))
+    private List<Producte> productesComprats;
 
 
     public Usuari(int idUsuari, String nom, Adreca adreca) {
@@ -47,5 +51,30 @@ public class Usuari {
 
     public void setAdreca(Adreca adreca) {
         this.adreca = adreca;
+    }
+
+    public List<Tasca> getTasques() {
+        return tasques;
+    }
+
+    public void setTasques(List<Tasca> tasques) {
+        this.tasques = tasques;
+    }
+
+    public List<Producte> getProductesComprats() {
+        return productesComprats;
+    }
+
+    public void setProductesComprats(List<Producte> productesComprats) {
+        this.productesComprats = productesComprats;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuari{" +
+                "idUsuari=" + idUsuari +
+                ", nom='" + nom + '\'' +
+                ", adreca=" + adreca +
+                '}';
     }
 }
